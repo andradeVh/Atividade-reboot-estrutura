@@ -17,8 +17,8 @@ public class Inventario {
         if (indice < 0 || indice > tamanho) throw new IndexOutOfBoundsException("indice invalido");
         if (tamanho == dados.length) throw new IllegalStateException("inventario cheio");
         // Desloque sem perder os valores anteriores.
-        for (int i = indice; i < tamanho; i++) {
-            dados[i + 1] = dados[i];
+        for (int i = tamanho ; i > indice; i-- ) {
+            dados[i] = dados[i-1];
         }
         dados[indice] = valor;
         tamanho++;
@@ -26,7 +26,7 @@ public class Inventario {
     public int remover(int indice) {
         if (indice < 0 || indice >= tamanho) throw new IndexOutOfBoundsException("indice invalido");
         int removido = dados[indice];
-        for (int i = indice; i < tamanho - 2; i++) {
+        for (int i = indice; i < tamanho-1; i++) {
             dados[i] = dados[i + 1];
         }
         tamanho--;
