@@ -7,10 +7,12 @@ public class Escalonador {
         public final List<String> conclusao = new ArrayList<>();
         public int tempoTotal;
     }
+
     public static Resultado executar(String[] nomes, int[] duracoes, int quantum) {
         if (nomes == null || duracoes == null || nomes.length != duracoes.length)
             throw new IllegalArgumentException("entradas incompativeis");
-        if (quantum <= 0) throw new IllegalArgumentException("quantum deve ser positivo");
+        if (quantum <= 0)
+            throw new IllegalArgumentException("quantum deve ser positivo");
         for (int i = 0; i < nomes.length; i++) {
             if (nomes[i] == null || nomes[i].isEmpty() || duracoes[i] <= 0)
                 throw new IllegalArgumentException("nome e duracao invalidos");
@@ -19,7 +21,9 @@ public class Escalonador {
         // ArrayDeque isola esta missao dos erros da FilaCircular.
         Deque<Integer> fila = new ArrayDeque<>();
         int[] restante = duracoes;
-        for (int i = 0; i < nomes.length; i++) fila.addLast(i);
+
+        for (int i = 0; i < nomes.length; i++)
+            fila.addLast(i);
         Resultado resultado = new Resultado();
         while (!fila.isEmpty()) {
             int p = fila.removeFirst();
@@ -27,8 +31,10 @@ public class Escalonador {
             resultado.execucao.add(nomes[p]);
             resultado.tempoTotal += executado;
             restante[p] -= executado;
-            if (restante[p] > 0) fila.addFirst(p);
-            else resultado.conclusao.add(nomes[p]);
+            if (restante[p] > 0)
+                fila.addFirst(p);
+            else
+                resultado.conclusao.add(nomes[p]);
         }
         return resultado;
     }
