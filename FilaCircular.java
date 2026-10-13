@@ -35,7 +35,7 @@ public class FilaCircular {
             throw new IllegalArgumentException("valor nulo");
         if (cheia())
             throw new IllegalStateException("fila cheia");
-        fim = (fim + 1) % dados.length;
+        fim = (fim + 1) % dados.length; // fix
         dados[fim] = valor;
         tamanho++;
     }
