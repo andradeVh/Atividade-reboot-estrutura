@@ -58,7 +58,6 @@ Quem programou / quem testou / quem explicou:
 ## Fechamento individual (cada integrante responde)
 Nome: Victor Hugo Andrade
 1. Tamanho e capacidade são a mesma coisa?
-<<<<<<< HEAD
     Não, a capidade é o limite de elementos que podemos inserir e o tamanho são quantos elementos inseridos.
 2. A fila pode começar fisicamente no índice 2?
     Não.
@@ -66,7 +65,11 @@ Nome: Victor Hugo Andrade
     Não, depende da prioridade do processo.
 4. Qual conteúdo você precisa praticar mais?
     Deque.
-=======
+
+## Fechamento individual (cada integrante responde)
+Nome: Gustavo Ramos
+
+1. Tamanho e capacidade são a mesma coisa?
 R: Não, o tamanho indica o total de indices preenchidos. A capacidade seria a quantidade maxima que a estrutura armazena.
 2. A fila pode começar fisicamente no índice 2?
 R: Não, pois a primeira posição tem a prioridade na logica da Fila. firt in first out.
@@ -74,7 +77,6 @@ R: Não, pois a primeira posição tem a prioridade na logica da Fila. firt in f
 R: Não foi estudado em aula.
 4. Qual conteúdo você precisa praticar mais?
 R: Acredito que preciso estar praticando mais os conceitos de Escalonador junto a fila circular e estudar referente as estruturas em Deque.
->>>>>>> 49b721648169a390bc38b398cdfeb5802f7d4543
 
 ## Desafio extra, se houver tempo
 Novo cenário de teste, resultado esperado e qual erro ele detecta:
