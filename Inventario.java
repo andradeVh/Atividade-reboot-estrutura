@@ -4,6 +4,7 @@ import java.util.Arrays;
 public class Inventario {
     private final int[] dados;
     private int tamanho;
+    //cmmit
 
     public Inventario(int capacidade) {
         if (capacidade <= 0) throw new IllegalArgumentException("capacidade deve ser positiva");
