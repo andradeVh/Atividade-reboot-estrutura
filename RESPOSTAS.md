@@ -1,12 +1,12 @@
 # Operação REBOOT — registro da equipe
 
-Equipe:
-Integrantes:
+Integrantes: Victor Hugo Andrade, Gustavo Ramos
 
 ## Missão 1 — Inventário
-Previsão ANTES de executar (vetor final, tamanho, capacidade e deslocamentos):
+### Previsão ANTES de executar (vetor final, tamanho, capacidade e deslocamentos): 
+O vetor final seria [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], o tamanho seria 10 e a capacidade seria 10. O deslocamento seria de O(n) para inserir no início e no fim do vetor.
 
-Resultado observado na versão inicial:
+### Resultado observado na versão inicial:
 
 A versão Inicial do inventario inseria de forma correta, sempre adicionando no indice.
 Porem quando inseriamos em um indice ja preenchido, a copia do indice para o valor seguinte estava com erro logico.
@@ -14,31 +14,32 @@ No fim, ele copiava o valor do local inserido e substituia em todo o Array.
 No metodo remover, apenas o parametro do laço estava incorreto. O que ocasionava em uma falha lógica e alterava o indice incorreto do array.
 
 
-
-
-Causa da falha e correção (explique; não basta colar o código):
+### Causa da falha e correção (explique; não basta colar o código):
 Para corrigir o erro de inserir, invertemos para que a copia seja feita do fim para o inicio, corrigindo a copia para liberar o indice.
 Para corrigi o erro de remover do indice incorreto, alteramos o parametro "tamanho -2" para "tamanho -1 ". Um erro simples que removia o indice, porem
 a copia final do array ficava incorreta e parecendo que o indice incorreto foi removido.
  
 
-Custo de inserir no início e no fim com espaço; por quê?
+### Custo de inserir no início e no fim com espaço; por quê?
 O custo é O(n) pois este processo exige percorrer todo o array e realizar as copias necessarias.
 
-Quem programou / quem testou / quem explicou:
+### Quem programou / quem testou / quem explicou:
 A resolução lógica do exercicio foi realizada em dupĺa, mas a implementação foi realizada pelo Aluno Gustavo Ramos.
 
 ## Missão 2 — Fila circular
-Previsão ANTES de executar (posições físicas, início, fim, tamanho e ordem lógica):
+### Previsão ANTES de executar (posições físicas, início, fim, tamanho e ordem lógica):
+A previsão era que o inicio seria 0, o fim seria 0, o tamanho seria 0 e a ordem lógica seria vazia. Ao remover(), eventualmente acessava um index inexistente.
 
-Resultado observado: Ao remover(), eventualmente acessava um index inexistente.
+### Resultado observado: 
+Ao remover(), eventualmente acessava um index inexistente.
 
-Causa da falha e correção: A falta do operador módulo fazia com que antigisse um índice inexistente, com (inicio + 1) % dados.length corrigmos isso fazendo com que retorne ao inicio do vetor. A função cheia() não considerava que o tamanho é igual a dados.length.
+### Causa da falha e correção: 
+A falta do operador módulo fazia com que antigisse um índice inexistente, com (inicio + 1) % dados.length corrigmos isso fazendo com que retorne ao inicio do vetor. A função cheia() não considerava que o tamanho é igual a dados.length.
 
-Como distinguir cheia de vazia? Como obter O(1) nas operações?
-    Deixando um posição vazia.
+### Como distinguir cheia de vazia? Como obter O(1) nas operações?
+Para distinguir cheia de vazia, podemos usar o tamanho da fila. Se o tamanho for igual à capacidade, a fila está cheia caso o tamanho for zero, a fila está vazia. Para obter O(1) nas operações, temos de garantir que as operações de inserir e remover sejam realizadas em tempo constante (O(1)). Podemos também deixar uma posição vazia para diferenciar cheia de vazia, mas isso não é necessário se usarmos o tamanho da fila.
 
-Quem programou / quem testou / quem explicou:
+### Quem programou / quem testou / quem explicou:
 Victor Hugo Andrade
 
 ## Missão 3 — Escalonador
@@ -60,11 +61,11 @@ Nome: Victor Hugo Andrade
 1. Tamanho e capacidade são a mesma coisa?
     Não, a capidade é o limite de elementos que podemos inserir e o tamanho são quantos elementos inseridos.
 2. A fila pode começar fisicamente no índice 2?
-    Não.
+    Não, pois a primeira posição tem a prioridade na logica da Fila(First in First out).
 3. O primeiro processo a chegar precisa terminar primeiro?
-    Não, depende da prioridade do processo.
+    Não, pois o escalonador pode escolher outro processo para executar, mesmo que ele tenha chegado depois.
 4. Qual conteúdo você precisa praticar mais?
-    Deque.
+    Deque e escalonador.
 
 ## Fechamento individual (cada integrante responde)
 Nome: Gustavo Ramos
